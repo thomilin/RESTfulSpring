@@ -1,3 +1,93 @@
-HOLA MUNDO!
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Tabla</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<button>Tareas</button>
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="css/style.css">
+
+	</head>
+	<body>
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">Tabla de tareas</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="table-wrap">
+						<table class="table table-responsive-xl" id="tareas">
+						  <thead>
+						    <tr>
+						    	<th>&nbsp;</th>
+						    	<th>Nombre</th>
+						      <th>id</th>
+						      <th>Status</th>
+						      <th>&nbsp;</th>
+						    </tr>
+						  </thead>
+						  <tbody>
+						    <tr class="alert" role="alert">
+						    	<td>
+									<button type="button">Edit</button>
+						    	</td>
+						      <td class="d-flex align-items-center">
+						      	<div class="img" style="background-image: url(images/person_1.jpg);"></div>
+						      	<div class="pl-3 email">
+						      		<span>Tarea 1</span>
+						      		<span>Added: 01/03/2020</span>
+						      	</div>
+						      </td>
+						      <td>10</td>
+						      <td class="status"><span class="active">Completado</span></td>
+						      <td>
+						      	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				            	<span aria-hidden="true"><i class="fa fa-close"></i></span>
+				          	</button>
+				        	</td>
+						    </tr>
+
+							<tr class="alert" role="alert">
+								<td>
+									<button type="button">Edit</button>
+								</td>
+								<td class="d-flex align-items-center">
+									<div class="img" style="background-image: url(images/person_1.jpg);"></div>
+									<div class="pl-3 email">
+										<span>Tarea 2</span>
+										<span>Added: 01/03/2020</span>
+									</div>
+								</td>
+								<td>20</td>
+								<td class="status"><span class="waiting">Pendiente</span></td>
+								<td>
+									<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+										<span aria-hidden="true"><i class="fa fa-close"></i></span>
+									</button>
+								</td>
+							</tr>
+
+						  </tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="js/jquery.min.js"></script>
+  <script src="js/popper.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+	<script src="js/tareas.js"></script>
+
+	</body>
+</html>
+
