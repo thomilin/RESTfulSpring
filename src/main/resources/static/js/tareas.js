@@ -5,15 +5,15 @@ $(document).ready(function () {
 
 async function cargarTareas(){
 
-        const request = await fetch('tarea/1111', {
-            method: 'GET',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            }
-        });
-        const tareas = await request.json();
+    const request = await fetch('tarea/1111', {
+        method: 'GET',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        }
+    });
+    const tareas = await request.json();
 
-        console.log(tareas);
+    console.log(tareas);
 
 }
