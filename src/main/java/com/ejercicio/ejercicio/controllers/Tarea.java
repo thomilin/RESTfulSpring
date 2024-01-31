@@ -10,6 +10,6 @@ public class Tarea {
 
     @RequestMapping(value = "prueba")
     public List<String> prueba() {
-        return List.of("Frutas","Verduras","Carne");
+        return List.of("Frutas","Verduras","Carne","Agua");
     }
 }
