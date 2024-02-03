@@ -31,3 +31,4 @@ PUT:  http://localhost:8080/tarea/1
 - DELETE debe permitir eliminar una tarea existente.
 En postman:
 DELETE:  http://localhost:8080/tarea/1
+![image](https://github.com/thomilin/RESTfullSpring/assets/86990832/202797d1-886d-4cbb-9295-b6e3b036f83e)
