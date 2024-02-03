@@ -34,4 +34,4 @@ DELETE:  http://localhost:8080/tarea/1
 ![image](https://github.com/thomilin/RESTfullSpring/assets/86990832/202797d1-886d-4cbb-9295-b6e3b036f83e)
 
 
-Template de la Tabla de Tareas sacado de ` https://colorlib.com/wp/template/table-05/ `
+> Template de la Tabla de Tareas sacado de https://colorlib.com/wp/template/table-05/
