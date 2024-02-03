@@ -1,64 +1,62 @@
 package com.ejercicio.ejercicio.controllers;
 
 import com.ejercicio.ejercicio.models.Tarea;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.ejercicio.ejercicio.service.ServiceTarea;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
 
 import java.util.ArrayList;
 import java.util.List;
 
 @RestController
+@RequestMapping("/tarea")
+@RequiredArgsConstructor
 public class Test {
 
-    @RequestMapping(value = "tarea/{id}")
-    public Tarea getTarea(@PathVariable Long id) {
-        Tarea tarea = new Tarea();
-        tarea.setId(id);
-        tarea.setNombre("Tarea1");
-        tarea.setCompletado(true);
-        return tarea;
+    @Autowired
+    private ServiceTarea serviceTarea;
+
+    @RestController
+    @RequestMapping("/tareas")
+    public class TareaController {
+
+        @Autowired
+        private ServiceTarea serviceTarea;
+
+        @GetMapping("/lista")
+        public List<Tarea> obtenerTareas() {
+            return serviceTarea.obtenerTareas();
+        }
     }
 
-    @RequestMapping(value = "tareas")
-    public List<Tarea> getTareas() {
-        List<Tarea> tareas = new ArrayList<>();
-        Tarea tarea = new Tarea();
-        tarea.setId(1L);
-        tarea.setNombre("Tarea1");
-        tarea.setCompletado(true);
-
-        Tarea tarea2 = new Tarea();
-        tarea2.setId(2L);
-        tarea2.setNombre("Tarea2");
-        tarea2.setCompletado(false);
-
-        Tarea tarea3 = new Tarea();
-        tarea3.setId(3L);
-        tarea3.setNombre("Tarea3");
-        tarea3.setCompletado(true);
-
-        tareas.add(tarea);
-        tareas.add(tarea2);
-        tareas.add(tarea3);
-        return tareas;
+    @PostMapping
+    public ResponseEntity guardarTarea(@RequestBody Tarea tarea){
+        return new ResponseEntity(serviceTarea.guardarTarea(tarea), HttpStatus.CREATED);
     }
 
-    /* @RequestMapping(value = "tarea12")
-    public Tarea editar() {
-        Tarea tarea = new Tarea();
-        tarea.setId(id);
-        tarea.setNombre("Tarea1");
-        tarea.setCompletado(true);
-        return tarea;
+    @GetMapping("/{id}")
+    public ResponseEntity obtenerTarea(@PathVariable("id") Long idTarea){
+        return new ResponseEntity(serviceTarea.obtenerTarea(idTarea), HttpStatus.OK);
     }
 
-    @RequestMapping(value = "tarea123")
-    public Tarea eliminar() {
-        Tarea tarea = new Tarea();
-        tarea.setId(id);
-        tarea.setNombre("Tarea1");
-        tarea.setCompletado(true);
-        return tarea;
-    } */
+    @PutMapping("/{id}")
+    public ResponseEntity editarTarea(@PathVariable("id") Long idTarea, @RequestBody Tarea tarea){
+        return new ResponseEntity(serviceTarea.editarTarea(idTarea, tarea), HttpStatus.OK);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity eliminarTarea(@PathVariable("id") Long idTarea){
+        boolean respuesta = serviceTarea.eliminarTarea(idTarea);
+        if (respuesta==true){
+            return new ResponseEntity(HttpStatus.OK);
+        }
+        else {
+            return new ResponseEntity(HttpStatus.NOT_FOUND);
+        }
+    }
+
 }
