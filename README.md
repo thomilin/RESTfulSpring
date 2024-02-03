@@ -25,3 +25,6 @@ PUT:  http://localhost:8080/tarea/1
     "nombre": "Juanito",
     "completado":false
 }
+
+![image](https://github.com/thomilin/RESTfullSpring/assets/86990832/20191b27-d0f5-4698-aa05-51564691f469)
+
