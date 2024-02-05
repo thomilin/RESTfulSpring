@@ -5,7 +5,7 @@ $(document).ready(function () {
 
 async function cargarTareas(){
 
-    const request = await fetch('tareas/lista', {
+    const request = await fetch('tarea/lista', {
         method: 'GET',
         headers: {
             'Accept': 'application/json',
