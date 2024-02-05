@@ -1,14 +1,11 @@
 package com.ejercicio.ejercicio.models;
 
 import jakarta.persistence.*;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 @Entity
 @Table(name = "tareas")
-@ToString @EqualsAndHashCode
+@ToString @EqualsAndHashCode  /* @AllArgs... */
 public class Tarea {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) /* Autoincrementable */
