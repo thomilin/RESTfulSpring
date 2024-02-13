@@ -2,6 +2,7 @@ package com.ejercicio.ejercicio.controllers;
 
 import com.ejercicio.ejercicio.models.Tarea;
 import com.ejercicio.ejercicio.service.ServiceTarea;
+import jakarta.persistence.Id;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,13 +15,16 @@ import java.util.List;
 @RestController
 @RequestMapping("/tarea")
 @RequiredArgsConstructor
+@CrossOrigin(origins = "http://localhost:4200")
 public class Test {
 
     @Autowired
     private ServiceTarea serviceTarea;
 
+
     @RestController
     @RequestMapping("/tarea")
+    @CrossOrigin(origins = "http://localhost:4200")
     public class TareaController {
 
         @Autowired

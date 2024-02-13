@@ -39,8 +39,8 @@ public class servicetareaimpl implements ServiceTarea {
     }
 
     @Override
-    public Tarea obtenerTarea(Long idTarea) {
-        return repositoryTarea.findById(idTarea).orElseThrow(() -> {throw new RuntimeException();});
+    public Tarea obtenerTarea(Long id) {
+        return repositoryTarea.findById(id).orElseThrow(() -> {throw new RuntimeException();});
     }
     @Override
     public Tarea editarTarea(Long id, Tarea editarTarea) {

@@ -14,4 +14,5 @@ public interface ServiceTarea {
     Tarea editarTarea(Long id, Tarea editarTarea);
 
     boolean eliminarTarea(Long id);
+
 }
